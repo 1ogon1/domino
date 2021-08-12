@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="left">
+    <mat-card class="mat-card">
+      <div class="button-row">
+        <button mat-icon-button color="primary" (click)="rotate(-90)" mat-raised-button
+          aria-label="Example icon button with a home icon">
+          <mat-icon>rotate_left</mat-icon>
+        </button>
+        <button mat-raised-button (click)="showSquares=!showSquares" color="primary">New domino</button>
+        <button mat-icon-button color="primary" (click)="rotate(90)" mat-raised-button
+          aria-label="Example icon button with a home icon">
+          <mat-icon>rotate_right</mat-icon>
+        </button>
+      </div>
+      <div class="domino-wrapper">
+        <div class="domino" [ngStyle]="{'transform': getTransform(), 'transition': getTransition()}">
+          <div [ngClass]="topSquare.class" class="square">
+            <span class="dot" *ngFor="let item of topSquare.count"></span>
+          </div>
+          <div [ngClass]="bottomSquare.class" class="square">
+            <span class="dot" *ngFor="let item of bottomSquare.count"></span>
+          </div>
+        </div>
+      </div>
+      <div class="sliders">
+        <div class="slider">
+          <div class="example-label-container">
+            <label>Scale domino</label>
+          </div>
+          <mat-slider class="example-margin" [max]="scale.max" [min]="scale.min" [step]="scale.step"
+            [(ngModel)]="scale.value"></mat-slider>
+        </div>
+        <div>
+          <div class="example-label-container">
+            <label>Anim. speed</label>
+          </div>
+          <mat-slider class="example-margin" [max]="speed.max" [min]="speed.min" [step]="speed.step"
+            [(ngModel)]="speed.value"></mat-slider>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="right" *ngIf="showSquares">
+    <h1>Choose option</h1>
+    <div class="row">
+      <div *ngFor="let square of squares" @fadeIn [ngClass]="square.class" (click)="setSquare(square, 'top')" class="square">
+        <span class="dot" *ngFor="let item of square.count"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let square of squares" @fadeIn [ngClass]="square.class" (click)="setSquare(square, 'bottom')" class="square">
+        <span class="dot" *ngFor="let item of square.count"></span>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</div>

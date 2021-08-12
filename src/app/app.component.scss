@@ -1,0 +1,222 @@
+.container {
+    padding: 20px;
+    display: flex;
+
+    .left {
+        width: 30%;
+        text-align: center;
+
+        .button-row {
+            button {
+                &:nth-child(2) {
+                    margin: 0 8px;
+                }
+            }
+        }
+
+        .domino-wrapper {
+            min-height: 300px;
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+
+            .domino {
+                margin: 0 auto;
+                border: 2px solid #bdc3c7;
+                width: 80px;
+                height: 160px;
+                border-radius: 5px;
+                display: flex;
+                flex-wrap: wrap;
+                box-shadow: 0 0 4px rgb(195 195 195 / 81%);
+
+                .square {
+                    width: 100%;
+                    height: 50%;
+                }
+            }
+        }
+
+        .slider {
+            margin-bottom: 16px;
+        }
+    }
+
+    .right {
+        width: calc(70% - 96px);
+        padding: 0 48px;
+
+        .row {
+            display: flex;
+            margin-bottom: 8px;
+
+            .square {
+                width: 80px;
+                height: 80px;
+                margin-right: 8px;
+                cursor: pointer;
+                transition: .5s ease all;
+
+                border: 1px solid #bdc3c7;
+
+                &:hover {
+                    box-shadow: 0 0 4px rgb(195 195 195 / 81%);
+                }
+            }
+        }
+    }
+
+    .square {
+        position: relative;
+        border-radius: 5px;
+
+        &:first-child {
+            border-bottom: 1px solid #bdc3c7;
+        }
+
+        &:last-child {
+            border-top: 1px solid #bdc3c7;
+        }
+
+        span {
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #3f51b5;
+        }
+
+        &.one {
+            span {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &.two {
+            span {
+                &:nth-child(1) {
+                    top: 5px;
+                    right: 5px;
+                }
+
+                &:nth-child(2) {
+                    bottom: 5px;
+                    left: 5px;
+                }
+            }
+        }
+
+        &.three {
+            span {
+                &:nth-child(1) {
+                    top: 5px;
+                    right: 5px;
+                }
+
+                &:nth-child(2) {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:nth-child(3) {
+                    bottom: 5px;
+                    left: 5px;
+                }
+            }
+        }
+
+        &.four {
+            span {
+                &:nth-child(1) {
+                    top: 5px;
+                    left: 5px;
+                }
+
+                &:nth-child(2) {
+                    top: 5px;
+                    right: 5px;
+                }
+
+                &:nth-child(3) {
+                    bottom: 5px;
+                    left: 5px;
+                }
+
+                &:nth-child(4) {
+                    bottom: 5px;
+                    right: 5px;
+                }
+            }
+        }
+
+        &.five {
+            span {
+                &:nth-child(1) {
+                    top: 5px;
+                    left: 5px;
+                }
+
+                &:nth-child(2) {
+                    top: 5px;
+                    right: 5px;
+                }
+
+                &:nth-child(3) {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:nth-child(4) {
+                    bottom: 5px;
+                    left: 5px;
+                }
+
+                &:nth-child(5) {
+                    bottom: 5px;
+                    right: 5px;
+                }
+            }
+        }
+
+        &.six {
+            span {
+                &:nth-child(1) {
+                    top: 5px;
+                    left: 5px;
+                }
+
+                &:nth-child(2) {
+                    top: 5px;
+                    right: 5px;
+                }
+
+                &:nth-child(3) {
+                    top: 50%;
+                    left: 5px;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(4) {
+                    top: 50%;
+                    right: 5px;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(5) {
+                    bottom: 5px;
+                    left: 5px;
+                }
+
+                &:nth-child(6) {
+                    bottom: 5px;
+                    right: 5px;
+                }
+            }
+        }
+    }
+}
