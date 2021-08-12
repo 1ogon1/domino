@@ -1,7 +1,7 @@
 # Domino
 ## Init
 
-Run `npm init` to initialize project.
+Run `npm i` to initialize project.
 
 ## Start
 
